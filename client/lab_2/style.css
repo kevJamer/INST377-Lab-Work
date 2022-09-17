@@ -151,6 +151,7 @@ body {
   flex: initial;
   width: 300px;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -255,7 +256,15 @@ h2 {
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
+ol {
+  list-style-type: decimal;
+}
 
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+
+}
 /*
   Rules can be combined on a block to apply the 'cascade' in order
   So you can use two classnames in a single class attribute
@@ -339,3 +348,6 @@ h2 {
   width: 150px;
   height: 150px;
 }
+
+
+
