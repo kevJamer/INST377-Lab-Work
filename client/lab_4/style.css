@@ -34,8 +34,8 @@ form label {
   /* check it out by using your developer tools to shrink your screen-size */
   .container {
     background-color: rgba(126, 126, 126, 0.65);
-    display: flex;
     flex-direction: column;
+    align-items: stretch;
   }  
 
 }
@@ -86,7 +86,6 @@ h2 {
 margin:0;
 padding:0;
 padding-bottom:1.5rem;
-align-items: start;
 }
 
 form {
@@ -178,6 +177,7 @@ flex: 0 1 auto;
 margin: 1rem;
 padding: 1.5rem;
 width: fit-content;
+align-items: start;
 }
 
 .right_section {
