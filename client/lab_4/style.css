@@ -29,17 +29,6 @@ form label {
 
 /* How To Write A Media Query For Small Screens */
 
-@media only screen and (max-width: 736px){
-  /* Rules in here will only apply when a screen is the correct size */
-  /* check it out by using your developer tools to shrink your screen-size */
-  .container {
-    background-color: rgba(126, 126, 126, 0.65);
-    flex-direction: column;
-    align-items: stretch;
-  }  
-
-}
-
 
 * {
 box-sizing: border-box;
@@ -116,6 +105,17 @@ align-items: start;
 flex:1;
 }
 
+@media only screen and (max-width: 736px){
+  /* Rules in here will only apply when a screen is the correct size */
+  /* check it out by using your developer tools to shrink your screen-size */
+  .container {
+    background-color: rgba(126, 126, 126, 0.65);
+    flex-direction: column;
+    align-content: center;
+  }  
+
+}
+
 .header {
 padding-top: 1rem;
 padding-left: 1rem;
@@ -177,7 +177,6 @@ flex: 0 1 auto;
 margin: 1rem;
 padding: 1.5rem;
 width: fit-content;
-align-items: start;
 }
 
 .right_section {
@@ -186,7 +185,6 @@ flex: 1 2 auto;
 flex-grow: 3;
 margin: 1rem;
 align-items: center;
-width: fit-containter;
 }
 
 .button {
