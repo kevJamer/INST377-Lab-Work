@@ -187,6 +187,10 @@ margin: 1rem;
 align-items: center;
 }
 
+.right_text {
+  align-self: center;
+}
+
 .button {
 width: fit-content;
 }
