@@ -93,6 +93,7 @@ form {
   flex:1;
 }
 @media only screen and (max-width: 736px){
+<<<<<<< HEAD
   /* Rules in here will only apply when a screen is the correct size */
   /* check it out by using your developer tools to shrink your screen-size */
   .container {
@@ -102,6 +103,95 @@ form {
     justify-items: center;
     flex-direction: column;
   }  
+=======
+    /* Rules in here will only apply when a screen is the correct size */
+    /* check it out by using your developer tools to shrink your screen-size */
+    .container {
+      background-color: rgba(126, 126, 126, 0.65);
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      flex-direction: column;
+    }  
+
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 
+  These rules apply to actual HTML elements with no labelling!
+  So: they style the tags directly
+*/
+
+html {
+  background-color: rgb(78, 129, 144);
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* these are specific to different browsers */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: rgb(192,192,192);
+}
+
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+h2 {
+  margin:0;
+  padding:0;
+  padding-bottom:1.5rem;
+  align-items: start;
+}
+
+form {
+  accent-color: hsla(120, 100%, 50%, 0.482);
+}
+
+/*
+  - These styles use 'class names'
+  - You can apply them by using the 'class' attribute on your HTML
+  - like this: <div class="wrapper">
+  - note that the period vanishes there!
+*/
+
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex: 1;
+}
+
+.container {
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex:1;
+>>>>>>> 6deeae875a67f570cebc14290e64cde41fa25ed7
 }
 
 .header {
@@ -111,6 +201,16 @@ form {
   padding-bottom: 1.5rem;
 }
 
+<<<<<<< HEAD
+=======
+
+/*
+  This rule implies that the H1 tag lives within another HTML tag
+  It "inherits" some rules from the above
+  Those rules won't apply to an h1 that's outside a block with the class of 'header'
+*/
+
+>>>>>>> 6deeae875a67f570cebc14290e64cde41fa25ed7
 .header h1 {
   display: block;
   /* this will push other blocks out of the way */
@@ -125,9 +225,27 @@ form {
   padding: 1.25rem;
   margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
 
+<<<<<<< HEAD
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
+=======
+
+  /* box-shadows are fancy */
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+
+/*
+  Rules can be combined on a block to apply the 'cascade' in order
+  So you can use two classnames in a single class attribute
+  like: <div class="box section">
+
+  Rules may combine in unexpected ways - remember that the LAST thing written in this file will have "priority"
+  And will be what displays in your client
+*/
+
+>>>>>>> 6deeae875a67f570cebc14290e64cde41fa25ed7
 .box {
   background-color: rgba(239, 239, 239, 0.40);
   border: 2px dashed;
@@ -180,4 +298,8 @@ form {
 .footer a {
   color: rgb(155, 67, 67);
   text-decoration: underline;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6deeae875a67f570cebc14290e64cde41fa25ed7
