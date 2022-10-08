@@ -1,5 +1,3 @@
-//const { Router } = require("express");
-
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
   form.addEventListener('submit', async (submitEvent) => { // async has to be declared on every function that needs to "await" something ****************************************
@@ -12,20 +10,11 @@ async function mainEvent() { // the async keyword means we can make API requests
         But this blocks us sending a query string by default - ?resto='' won't exist
 
         Let's get those form results before sending off our GET request using the Fetch API
-
-        req, the request object.
-        res, the response object.
-        next, indicating the next middleware function.
-        The value of the name parameter.
-        The name of the parameter.
-
     */
-
-    
 
     // this is the preferred way to handle form data in JS in 2022
     const formData = new FormData(submitEvent.target); // get the data from the listener target
-    console.log(submitEvent.target);
+
     const formProps = Object.fromEntries(formData); // Turn it into an object
 
     // You can also access all forms in a document by using the document.forms collection
@@ -41,7 +30,8 @@ async function mainEvent() { // the async keyword means we can make API requests
       // this is a basic GET request
       // It does not include any of your form values, though
     */
-    const results = await fetch('/api/foodServicePG'); 
+    const fetchQuery = new URLSearchParams(formProps);
+    const results = await fetch('/api/foodServicePG?${fethQuery}'); 
     /*
    ## Get request with query parameters
        
