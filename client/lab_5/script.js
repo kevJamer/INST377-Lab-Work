@@ -14,9 +14,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
     // this is the preferred way to handle form data in JS in 2022
     const formData = new FormData(submitEvent.target); // get the data from the listener target
-
     const formProps = Object.fromEntries(formData); // Turn it into an object
-
     // You can also access all forms in a document by using the document.forms collection
     // But this will retrieve ALL forms, not just the one that "heard" a submit event - less good
 
@@ -30,12 +28,11 @@ async function mainEvent() { // the async keyword means we can make API requests
       // this is a basic GET request
       // It does not include any of your form values, though
     */
+
     const fetchQuery = new URLSearchParams(formProps);
-    const results = await fetch('/api/foodServicePG?${fethQuery}'); 
+    const results = await fetch(`/api/foodServicePG?${fetchQuery}`); 
     /*
    ## Get request with query parameters
-       
-      const results = await fetch(`/api/foodServicePG?${new URLSearchParams(formProps)}`);
 
       The above request uses "string interpolation" to include an encoded version of your form values
       It works because it has a ? in the string
@@ -59,4 +56,4 @@ async function mainEvent() { // the async keyword means we can make API requests
   The use of the async keyword means we can "await" events before continuing in our scripts
   In this case, we load some data when the form has submitted
 */
-document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests ***************************************
+document.addEventListener('DOMContentLoaded', async () => mainEvent());
