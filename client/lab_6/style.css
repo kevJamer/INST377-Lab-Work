@@ -223,6 +223,10 @@ text-decoration: underline;
     width: 80px;
     height: 80px;
   }
+
+ .lds-ellipsis-hidden {
+  display : hidden;
+ } 
   .lds-ellipsis div {
     position: absolute;
     top: 33px;
