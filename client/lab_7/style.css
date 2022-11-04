@@ -120,13 +120,16 @@ form input {
   
   }
   
+  header {
+    border-style: dashed;
+  }
+
   .header {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1.5rem;
   }
-  
   
   /*
   This rule implies that the H1 tag lives within another HTML tag
@@ -152,8 +155,6 @@ form input {
   /* box-shadows are fancy */
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
   }
-  
-  
   /*
   Rules can be combined on a block to apply the 'cascade' in order
   So you can use two classnames in a single class attribute
