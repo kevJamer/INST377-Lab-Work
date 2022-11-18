@@ -5,7 +5,7 @@
   by adding `<script src="script.js">` just before your closing `</body>` tag
 */
 
-function getRandomIntInclusive(min, max) {
+  function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
@@ -78,7 +78,31 @@ function getRandomIntInclusive(min, max) {
     });
   }
 
+  function initMap() {
+    console.log('initMap');
+    const map = L.map('map').setView([38.9897, -96.9378], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+  }
 
+  function markerPlace(array,map) {
+    console.log('markerPlacee', array);
+    const marker = L.marker([51.5,-.09]).addTo(map);
+    map.eachLayer((layer) => {
+        if (layer instanceof L.marker) {
+            layer.remove();
+        }
+
+    });
+
+    array.forEach((item) => {
+        const {coordinates} = item.geocoded_column_1;
+        console.log(item);
+        L.marker([coordinates[1], coordinates[0]]).addTo(map);
+    });
+  }
 
   async function mainEvent() {
     /*
@@ -88,6 +112,8 @@ function getRandomIntInclusive(min, max) {
         If you separate your work, when one piece is complete, you can save it and trust it
     */
   
+    const pageMap = initMap();
+
     // the async keyword means we can make API requests
     const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
     const submit = document.querySelector('#get-resto'); // get a reference to your submit button
@@ -131,6 +157,7 @@ function getRandomIntInclusive(min, max) {
         console.log(event.target.value);
         const filteredList = filterList(currentList, event.target.value);
         injectHTML(filteredList);
+        markerPlace(currentList,pageMap)
       });
 
       // And here's an eventListener! It's listening for a "submit" button specifically being clicked
@@ -141,7 +168,7 @@ function getRandomIntInclusive(min, max) {
         currentList = processRestaurants(arrayFromJson.data);
         // And this function call will perform the "side effect" of injecting the HTML list for you
         injectHTML(currentList);
-  
+        markerPlace(filterList,pageMap);
         // By separating the functions, we open the possibility of regenerating the list
         // without having to retrieve fresh data every time
         // We also have access to some form values, so we could filter the list based on name
