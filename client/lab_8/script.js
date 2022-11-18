@@ -90,16 +90,17 @@
 
   function markerPlace(array,map) {
     map.eachLayer((layer) => {
-        if (layer instanceof L.marker) {
+        if (layer instanceof L.Marker) {
             layer.remove();
         }
-
     });
 
     array.forEach((item,index) => {
         const {coordinates} = item.geocoded_column_1;
         L.marker([coordinates[1], coordinates[0]]).addTo(map);
-        map.setView([coordinates[1], coordinates[0]], 9); 
+        if (index === 0) {
+            map.setView([coordinates[1], coordinates[0]], 9); 
+        }
     });
   }
 
@@ -156,7 +157,7 @@
         console.log(event.target.value);
         const filteredList = filterList(currentList, event.target.value);
         injectHTML(filteredList);
-        markerPlace(filteredList,pageMap);
+        markerPlace(filteredList, pageMap);
       });
 
       // And here's an eventListener! It's listening for a "submit" button specifically being clicked
@@ -167,7 +168,7 @@
         currentList = processRestaurants(arrayFromJson.data);
         // And this function call will perform the "side effect" of injecting the HTML list for you
         injectHTML(currentList);
-        markerPlace(filterList,pageMap);
+        markerPlace(currentList, pageMap);
         // By separating the functions, we open the possibility of regenerating the list
         // without having to retrieve fresh data every time
         // We also have access to some form values, so we could filter the list based on name
