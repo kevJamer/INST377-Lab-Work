@@ -156,7 +156,7 @@
         console.log(event.target.value);
         const filteredList = filterList(currentList, event.target.value);
         injectHTML(filteredList);
-        markerPlace(currentList,pageMap)
+        markerPlace(filteredList,pageMap);
       });
 
       // And here's an eventListener! It's listening for a "submit" button specifically being clicked
