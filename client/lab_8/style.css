@@ -197,6 +197,16 @@ form input {
   width: fit-content;
   }
   
+  #map {
+  display: block;
+  width: 400px;
+  height:380px;
+  border: 2px dashed rgb(99,99,99);
+  margin-bottom: 1rem;
+
+  } 
+
+
   /*
   This block is actually dependent on the "container" block having a flex set on it
   and the "wrapper" block displaying as a flex column with a "vertical height" (vh) of 100.
