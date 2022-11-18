@@ -85,11 +85,10 @@
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+    return map;
   }
 
   function markerPlace(array,map) {
-    console.log('markerPlacee', array);
-    const marker = L.marker([51.5,-.09]).addTo(map);
     map.eachLayer((layer) => {
         if (layer instanceof L.marker) {
             layer.remove();
@@ -97,10 +96,10 @@
 
     });
 
-    array.forEach((item) => {
+    array.forEach((item,index) => {
         const {coordinates} = item.geocoded_column_1;
-        console.log(item);
         L.marker([coordinates[1], coordinates[0]]).addTo(map);
+        map.setView([coordinates[1], coordinates[0]], 9); 
     });
   }
 
