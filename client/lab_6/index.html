@@ -1,9 +1,51 @@
-<!--
-    This is how to build the CSS-only load animation from loading.io    
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+ it at the same level in your element tree as your Submit button
 
-    This is helpful for showing your client-side users when data is loading,
-    since there's otherwise no sign your app is thinking about something!
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Lab6 - KJamer </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <div class = "wrapper">
+            <div class = "header">
+                <div class = "h1">
+                    <header><h1> Kevin Jamer's Labs For INST377 </h1></header>
+                </div>
+            </div>
+            <div class = container>
+                <div class = "left_section box">
+                    <h1> Form Inputs </h1>
+                    <div class = "box">
+                        <div class = "left">
+                            <h2> Restaurant Name </h2>
+                        </div>
+                        <form action="/api" class = "main_form">
+                            <div>
+                                <label for="resto">Restuarant Name</label>
+                                <input type = "text" name= "resto" id = "resto"/>
+                            </div>
+                            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                            <button type ="submit" id = "get-resto">Submit</button>
+                        </form>
 
-    Try placing it at the same level in your element tree as your Submit button
--->
+                    </div>
+                </div>
+                <div class = "right_section box">
+                    <h1>Local Restaurants </h1>
+                    <div class = "box" id = "restaurant_list">
+                        <p> A list of restaurants from an API </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class = "footer">
+                <footer> Kevin Jamer's Github: <a href= "https://github.com/kevJamer"> My Github Account </a></footer> 
+        </div>
+            <script src="script.js"></script> 
+      </body>
+  </html>
